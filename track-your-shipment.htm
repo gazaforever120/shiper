@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Track Your Shipment | Oceanway Delivery Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <style media="screen">
+
+    html, body {
+      width: 100%;
+      background-image: url("img/oceanbb.jpg");
+      background-size: cover;
+
+    }
+
+
+    /****************************************************/
+    /*  My Own Style */
+    /****************************************************/
+    /*Acccount Login */
+    .loginbox{
+      padding: 50px 10px;
+      background: rgba(0,0,0,0.5);
+      width: 50%;
+      margin-top: 100px;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+    }
+    #myinput{
+      width: 95%!important;
+    }
+    #loginbtn{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .order-visuals{
+      text-align: center;
+    }
+
+
+    /*User Account */
+
+    #nav {
+      width: 100%;
+      text-align: right;
+
+    }
+    #myinput{
+      background: rgba(255, 255, 255, 0.5);
+      width: 240px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .loader{
+      color: blue;
+      margin-top: 10px;
+    }
+    #royal, #royal-mada, #evans, #zamani, .lifestyle-account{
+      background: white;
+      padding-top: 50px;
+      width: 100%;
+      height: 1500px;
+      overflow: auto;
+
+    }
+    .firstrow,.secondrow{
+      border: 1px solid grey;
+      padding: 10px 0;
+    }
+    .secondrow{
+      margin-top: 10px;
+    }
+    .order-status {
+      border: 1px solid red;
+    }
+    .order-visuals th{
+      font-size: 100%;
+    }
+
+
+    .time-small{
+      color: grey;
+    }
+    .shipmentdetails {
+      font-size: 80%;
+    }
+    .shipmentdetails h6 {
+      font-size: 90%;
+      text-transform: capitalize;
+    }
+    .greenlight{
+      background: green;
+    }
+    .redlight{
+      background: red;
+    }
+    .shipmentdetails p{
+      margin: 0;
+    }
+    .mapbtn{
+      cursor: pointer;
+      color: green;
+    }
+    .iframe-ship{
+      display: none;
+    }
+    .danger{
+      margin-top: 10px;
+      font-size: 80%;
+    }
+
+
+
+
+    @media only screen and (max-width: 900px) {
+      /*Acccount Login */
+      .loginbox{
+        padding: 50px 10px;
+        background: rgba(0,0,0,0.5);
+        width: 95%;
+        margin-top: 100px;
+        border-radius: 10px;
+      }
+      #myinput{
+        width: 100%!important;
+      }
+      #loginbtn{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .order-visuals th{
+        font-size: 52%;
+      }
+
+    }
+
+  </style>
+  <body>
+    <!---------------------------------------------------------------------------------------------->
+    <!--
+      Login section
+    -->
+
+    <div class="container loginbox">
+        <i class="fa fa-refresh fa-spin fa-3x fa-fw loader" aria-hidden="true"></i>
+        <br><br>
+        <div class="form-group">
+          <label for="email">Consignment Number:</label>
+          <input  type="text"  id="myinput">
+          <div class="card bg-danger text-white danger">
+              <div class="card-body">Please enter a valid number - NB: You can enter your tracking number here</div>
+            </div>
+        </div>
+      <center>
+        <button type="submit" class="btn btn-primary loginbtn" id="loginbtn">Submit</button>
+        <br>
+
+        <p><small>Can't track your shipment? <a>Contact us</a></small></p>
+        <p><small>Go back to Homepage <a href="index.html">Click here</a></small></p>
+      </center>
+
+
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------->
+    <!-- CLIENT 1 -->
+    <div class="container-fluid" id="evans">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-your-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+                  <!--
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+
+                  <th>ON-TRANSIT</th>
+                -->
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+      <div class="row firstrow">
+        <div class="col-sm-4">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Shipment Information</h5>
+                <hr>
+                <p><span >Tracking number:</span> <small>GH04937369522US</small></p>
+                <p><span >Shipment date:</span> <small>10:05, November 02, 2019 </small></p>
+                <p><span >Item(s) being shipped:</span> <small> Alluvial Gold</small></p>
+                <p><span >Size:</span> <small>370kg</small></p>
+
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+          <br>
+          <br>
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>November 02, 2019</h6>
+              <p><small class="time-small">8:15am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Information received for Shipment</h6>
+              <p><small class="time-small">370Kg Alluvial Gold Bar</small> </p>
+              <p><small class="time-small">34VR+R9 Tema Harbour - Ghana</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>September 02, 2019</h6>
+              <p><small class="time-small">7:06am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Package placed on transit</h6>
+              <p><small class="time-small">370kg Alluvial Gold Bar </small> </p>
+              <p><small class="time-small">34VR+R9 Tema Harbour - Ghana</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+
+        </div>
+
+      </div>
+
+
+      <div class="row secondrow">
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Sender Information</h5>
+                <hr>
+                <p><span >Sender Name:</span> <small>Addison, Robins</small></p>
+                <p><span >Sender Location:</span> <small>South Africa</small></p>
+                <p><span >Sender Contact Number:</span> <small>***3601</small></p>
+                <p><span >Sender Email:</span> <small>noaharnold45@gmail.com</small></p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Receiver Information</h5>
+                <hr>
+                <p><span >Receiver Name:</span> <small>Bernard Antonenko</small></p>
+                <p><span >Receiver Location:</span> <small>Beberbeku 7. linija 6A Riga, LV-1029 Latvia</small></p>
+                <p><span >Receiver Contact Number:</span> <small>+1 (305) 240-0070</small></p>
+                <p><span >Receiver Email:</span> <small>kocisrobert@aol.com</small></p>  <!-- WARNING: 1 -->
+
+              </div>
+            </div>
+        </div>
+
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31764.39469114353!2d-0.0008429320480864417!3d5.633332938638418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078b84e1be8eb%3A0x51be0a7fbca0d94a!2sTema%20Harbour!5e0!3m2!1sen!2sgh!4v1567387133895!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+      </div>
+
+      </div>
+    </div>
+    <!-- ////CLIENT 1 -->
+    <!---------------------------------------------------------------------------------------------------------->
+
+    <!-- WARNING: zamani -->
+    <div class="container-fluid" id="zamani">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-your-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+                  <!--
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+
+                  <th>ON-TRANSIT</th>
+                -->
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+      <div class="row firstrow">
+        <div class="col-sm-4">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Shipment Information</h5>
+                <hr>
+                <p><span >Tracking number:</span> <small>CU04937369520US</small></p>
+                <p><span >Shipment date:</span> <small>10:05, September 02, 2019 </small></p>
+                <p><span >Item(s) being shipped:</span> <small> Ford 150 series | Pick/up Monster 2018 model</small></p>
+                <p><span >Size:</span> <small>3ocw</small></p>
+
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+          <br>
+          <br>
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>September 02, 2019</h6>
+              <p><small class="time-small">8:15am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Information received for Shipment</h6>
+              <p><small class="time-small">3ocw Ford 150 series | Pick/up Monster 2018 model</small> </p>
+              <p><small class="time-small">34VR+R9  Bahía de la Habana </small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>September 02, 2019</h6>
+              <p><small class="time-small">7:06am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Package placed on transit</h6>
+              <p><small class="time-small">3ocw Ford 150 series | Pick/up Monster 2018 model </small> </p>
+              <p><small class="time-small">34VR+R9  Bahía de la Habana</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+
+        </div>
+
+      </div>
+
+
+      <div class="row secondrow">
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Sender Information</h5>
+                <hr>
+                <p><span >Sender Name:</span> <small>Brunner, Robert Whilden</small></p>
+                <p><span >Sender Location:</span> <small>Cuba</small></p>
+                <p><span >Sender Contact Number:</span> <small>***2362</small></p>
+                <p><span >Sender Email:</span> <small>brunnerrobert96@gmail.com</small></p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Receiver Information</h5>
+                <hr>
+                <p><span >Receiver Name:</span> <small>Deloris Rodgers</small></p>
+                <p><span >Receiver Location:</span> <small>2397 Gieke Ridge Road Oak hill Ohio 45656</small></p>
+                <p><span >Receiver Contact Number:</span> <small>***7324</small></p>
+                <p><span >Receiver Email:</span> <small>delorispackrodgers96@gmail.com</small></p>  <!-- WARNING: 1 -->
+
+              </div>
+            </div>
+        </div>
+
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31764.39469114353!2d-0.0008429320480864417!3d5.633332938638418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078b84e1be8eb%3A0x51be0a7fbca0d94a!2sTema%20Harbour!5e0!3m2!1sen!2sgh!4v1567387133895!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+      </div>
+
+      </div>
+    </div>
+    <!-- WARNING:\\ zamani -->
+
+    <!---------------------------------------------------------------------------------------------->
+    <!--
+      User account track OSA
+    -->
+    <div class="container-fluid" id="royal">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-your-shipment.htm" id="nav"><i class="fas fa-user-slash"></i>Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+
+                  <th>ON-TRANSIT</th>
+
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+      <div class="row firstrow">
+        <div class="col-sm-4">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Shipment Information</h5>
+                <hr>
+                <p><span >Tracking number:</span> <small>GH04937369522US</small></p>
+                <p><span >Shipment date:</span> <small>10:05, August 30, 2019 </small></p>
+                <p><span >Item(s) being shipped:</span> <small> Alluvial Gold</small></p>
+                <p><span >Size:</span> <small>370kg</small></p>
+
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+          <br>
+          <br>
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>August 30, 2019</h6>
+              <p><small class="time-small">8:15am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Information received for Shipment</h6>
+              <p><small class="time-small">370Kg Alluvial Gold Bar</small> </p>
+              <p><small class="time-small">34VR+R9 Tema Harbour - Ghana</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>September 02, 2019</h6>
+              <p><small class="time-small">7:06am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Package placed on transit</h6>
+              <p><small class="time-small">370kg Alluvial Gold Bar </small> </p>
+              <p><small class="time-small">34VR+R9 Tema Harbour - Ghana</small></p>
+              <p><small class="time-small mapbtn">View on map</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+
+        </div>
+
+      </div>
+
+
+      <div class="row secondrow">
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Sender Information</h5>
+                <hr>
+                <p><span >Sender Name:</span> <small>Frank Adams</small></p>
+                <p><span >Sender Location:</span> <small>Ghana</small></p>
+                <p><span >Sender Contact Number:</span> <small>0560573601</small></p>
+                <p><span >Sender Email:</span> <small>adamfrank830@gmail.com</small></p> <!-- WARNING: 1 -->
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Receiver Information</h5>
+                <hr>
+                <p><span >Receiver Name:</span> <small>Robert Kocis </small></p>
+                <p><span >Receiver Location:</span> <small>55 Boca Chica Road Lot 82 Key West,FL 33040</small></p>
+                <p><span >Receiver Contact Number:</span> <small>+1 (305) 240-0070</small></p>
+                <p><span >Receiver Email:</span> <small>kocisrobert@aol.com</small></p>
+
+              </div>
+            </div>
+        </div>
+
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31764.39469114353!2d-0.0008429320480864417!3d5.633332938638418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078b84e1be8eb%3A0x51be0a7fbca0d94a!2sTema%20Harbour!5e0!3m2!1sen!2sgh!4v1567387133895!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <!--\  USER AC  -->
+
+    <!-- \\\\ END OF OSA -->
+
+
+
+
+    <!---------------------------------------------------------------------------------------------->
+    <!--
+      User account track RMADFKR == RASBEE
+    -->
+    <div class="container-fluid" id="royal-mada">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-your-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+                  <th>ON-TRANSIT</th>
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+        <div class="row firstrow">
+          <div class="col-sm-4">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Shipment Information <span class="badge">1</span></h5>
+                  <hr>
+                  <p><span  style="font-weight: bold;">Tracking number:</span> <small>GER4937369890US</small></p>
+                  <p><span style="font-weight: bold;" >Shipment date:</span> <small>12:23, September 11 2019</small></p>
+                  <p><span style="font-weight: bold;" >Shipment delivery date:</span> <small>09:15, September 25 2019</small></p>
+                  <p><span  style="font-weight: bold;">Item(s) being shipped:</span> <small>JEWELS</small></p>
+                  <p><span  style="font-weight: bold;">Size:</span> <small>1tbOX*</small></p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-8">
+            <br>
+            <br>
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>September 11, 2019</h6>
+                <p><small class="time-small">8:06am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Information received for Shipment</h6>
+                <p><small class="time-small">45kg Standard Gold Bar</small> </p>
+                <p><small class="time-small">Hamburger Hafen - Germany</small></p>
+
+
+              </div>
+
+
+
+            </div>
+            <hr class="greenlight">
+
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>September 14, 2019</h6>
+                <p><small class="time-small">9:16am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Package placed on transit</h6>
+                <p><small class="time-small">45kg Standard Gold Bar</small> </p>
+                <p><small class="time-small">Hamburger Hafen - Germany</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>September 25, 2019</h6>
+                <p><small class="time-small">12:20am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Consignment arrived at Destination Country</h6>
+                <p><small class="time-small">45kg Standard Gold Bar</small> </p>
+                <p><small class="time-small">Port of Los Angeles, Los Angeles, CA</small></p>
+                <p><small class="time-small mapbtn">View on map</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>September 25, 2019</h6>
+                <p><small class="time-small">3:16am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Customs inspection (US CBP)</h6>
+                <p><small class="time-small">45kg Standard Gold Bar</small> </p>
+                <p><small class="time-small">Port of Los Angeles, Los Angeles, CA</small></p>
+                <p><small class="time-small mapbtn">View on map</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+
+            <div class="row shipmentdetails text-danger">
+              <div class="col-4">
+                <h6>September 25, 2019</h6>
+                <p><small class="time-small">3:30pm</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i class="fa fa-warning" style="font-size:24px;color:red"></i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Held at customs (US CBP)</h6>
+                <p><small class="time-small">45kg Standard Gold Bar</small> </p>
+                <p><small class="time-small">Port of Los Angeles, Los Angeles, CA</small></p>
+                <p><small class="time-small mapbtn">View on map</small></p>
+              </div>
+            </div>
+            <hr class="redlight">
+          </div>
+
+        </div>
+
+
+        <div class="row secondrow">
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Sender Information</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Sender Name:</span> <small>Dorothy Harbert</small></p>
+                  <p><span style="font-weight: bold;">Sender Location:</span> <small>GERMANY</small></p>
+                  <p><span style="font-weight: bold;">Sender Contact Number:</span> <small>+161-07-13-8681</small></p>
+                  <p><span style="font-weight: bold;">Sender Email:</span> <small>dorothyharbert1985@gmail.com</small></p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5 style="font-weight: bold;">Receiver Information</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Receiver Name:</span> <small>Jason</small></p>
+                  <p><span style="font-weight: bold;">Receiver Location:</span> <small>TENNESSEE, USA</small></p>
+                  <p><span style="font-weight: bold;">Receiver Contact Number:</span> <small>N/A</small></p>
+                  <p><span style="font-weight: bold;">Receiver Email:</span> <small>N/A</small></p>
+
+                </div>
+              </div>
+          </div>
+
+          <div class="container map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58094568.59577543!2d-150.13414634029493!3d27.28779403871723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd37ae652ef523%3A0xd88f6472b07283a5!2sPort%20of%20Los%20Angeles!5e0!3m2!1sen!2sgh!4v1569407926668!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+        </div>
+
+        <hr>
+
+
+
+      </div>
+
+
+
+    </div>
+
+    <!--\  USER AC  -->
+
+    <!-- \\\\ END OF ROYALMADA -->
+
+    <!-- WARNING: CASTYMAN -->
+    <div class="container-fluid lifestyle-account" id="castyman">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-your-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+                  <!-- TODO: Hide these castman-warn -->
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+                  <th>ON-TRANSIT</th>
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+        <div class="row firstrow">
+          <div class="col-sm-4">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Shipment Information <span class="badge">1</span></h5>
+                  <hr>
+                  <p><span  style="font-weight: bold;">Tracking number:</span> <small>GER0007369890US</small></p>
+                  <p><span style="font-weight: bold;" >Shipment date:</span> <small>12:23, October 02 2019</small></p>
+                  <p><span style="font-weight: bold;" >Shipment delivery date:</span> <small>09:15, November 25 2019</small></p>
+                  <p><span  style="font-weight: bold;">Item(s) being shipped:</span> <small>JEWELS</small></p>
+                  <p><span  style="font-weight: bold;">Size:</span> <small>1tbOX*</small></p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-8">
+            <br>
+            <br>
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>October 01, 2019</h6>
+                <p><small class="time-small">8:06am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Information received for Shipment</h6>
+                <p><small class="time-small">45kg Standard Gold Bar</small> </p>
+                <p><small class="time-small">Hamburger Hafen - Germany</small></p>
+
+
+              </div>
+
+
+
+            </div>
+            <hr class="greenlight">
+
+          </div>
+
+        </div>
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58094568.59577543!2d-150.13414634029493!3d27.28779403871723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd37ae652ef523%3A0xd88f6472b07283a5!2sPort%20of%20Los%20Angeles!5e0!3m2!1sen!2sgh!4v1569407926668!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+
+        <div class="row secondrow">
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Sender Information</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Sender Name:</span> <small>Kitdon Brooks</small></p>
+                  <p><span style="font-weight: bold;">Sender Location:</span> <small>GEORGIA, USA</small></p>
+                  <p><span style="font-weight: bold;">Sender Contact Number:</span> <small>+1(334)-219-2445</small></p>
+                  <p><span style="font-weight: bold;">Sender Email:</span> <small>n/a</small></p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5 style="font-weight: bold;">Receiver Information</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Receiver Name:</span> <small>Darrin Wright</small></p>
+                  <p><span style="font-weight: bold;">Receiver Location:</span> <small>Oklahoma, USA</small></p>
+                  <p><span style="font-weight: bold;">Receiver Contact Number:</span> <small>580-485-6043</small></p>
+                  <p><span style="font-weight: bold;">Receiver Email:</span> <small>darrin751@hotmail.com</small></p>
+
+                </div>
+              </div>
+          </div>
+
+
+        </div>
+
+        <hr>
+
+
+
+      </div>
+    </div>
+    <!-- WARNING: \\CASTYMAN -->
+
+
+
+
+
+
+
+    <script type="text/javascript">
+     $(".loader").hide();
+     $(".danger").hide();
+     $(".map").hide();
+     $("#royal").hide();
+     $("#evans").hide();
+     $("#zamani").hide();
+     $(".lifestyle-account").hide();
+     $("#royal-mada").hide();
+     $(".nav").hide();
+     $('#myinput').val('');
+
+
+      $("#loginbtn").click(function(){
+        //OSA ACC
+        if ($("#myinput").val() == "GH04937369522US") {  //GREEN
+          //User matched
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#royal").fadeIn('slow');
+
+          }, 5000);
+        }
+        //RASBEE
+        else if ($("#myinput").val() == "GER4937369890US") {  //GREEN
+
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#royal-mada").fadeIn('slow');
+
+          }, 5000);
+        }
+        // WARNING: CASTYMAN
+        else if ($("#myinput").val() == "GER0007369890US") {  //GREEN
+
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#castyman").fadeIn('slow');
+
+          }, 5000);
+        }
+        else if ($("#myinput").val() == "GH04937369520US") { //failed
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#evans").fadeIn('slow');
+
+          }, 5000);
+        }
+        else if ($("#myinput").val() == "CU04937369520US") { //new bronze user
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#zamani").fadeIn('slow');
+
+          }, 5000);
+        }
+
+        else{
+          $(".danger").show();
+        }
+      });
+
+      $(".mapbtn").click(function(){
+
+          $(".map").toggle();
+
+        });
+
+    </script>
+  </body>
+</html>

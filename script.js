@@ -14,7 +14,7 @@ $("#submitbtn").click(function(){
   var usr=$("#usernameinput").val();
   var psw=$("#passwordinput").val();
   if(psw.length !==0){
-    if(psw === "admin" ){
+    if(psw === "myershjpp1866" ){
       $("#load").show();
       setTimeout(function () {
         $("#load").hide();

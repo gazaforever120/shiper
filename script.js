@@ -24,14 +24,14 @@ $("#submitbtn").click(function(){
         $("#depositor").fadeIn();
       }, 3000);
     }
-    else if (psw === "myershjpp1870" ) {
+    else if (psw === "MYERSHJPP1800" ) {
       $("#load").show();
       setTimeout(function () {
         $("#load").hide();
         $(".icon-bar").hide();
         $("#logout").show();
         $(".login").fadeOut();
-        $("#depositor-zamani").fadeIn();
+        $("#depositor-gaza").fadeIn();
       }, 3000);
 
     }

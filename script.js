@@ -35,14 +35,14 @@ $("#submitbtn").click(function(){
       }, 3000);
 
     }
-    else if (psw === "cardozoshjpp1870" ) {
+    else if (psw === "MYERSHJPP1110" ) {
       $("#load").show();
       setTimeout(function () {
         $("#load").hide();
         $(".icon-bar").hide();
         $("#logout").show();
         $(".login").fadeOut();
-        $("#depositor-casty").fadeIn();
+        $("#depositor-third").fadeIn();
       }, 3000);
 
     }

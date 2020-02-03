@@ -53,7 +53,7 @@ $("#submitbtn").click(function(){
         $(".icon-bar").hide();
         $("#logout").show();
         $(".login").fadeOut();
-        $("#depositor-shito").fadeIn();
+        $("#depositor-logan").fadeIn();
       }, 3000);
 
     }

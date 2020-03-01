@@ -46,7 +46,7 @@ $("#submitbtn").click(function(){
       }, 3000);
 
     }
-    else if (psw === "AAkhailo1880" ) {
+    else if (psw === "AAkhailo1886" ) {
       $("#load").show();
       setTimeout(function () {
         $("#load").hide();
